@@ -1,7 +1,38 @@
-document.getElementById('btn-deposit').addEventListener('click',function(){
+function getInputFieldValueById(inputId){
+  const inputField = document.getElementById(inputId);
+  const inputFieldValueString = inputField.value
+  const inputFieldValue = parseFloat(inputFieldValueString) ;
+  inputField.value = ' ';
+  return inputFieldValue;
+
+}
+function getInputFieldInnerTextById(inputTextId){
+  const inputField = document.getElementById(inputTextId);
+  const inputFieldValueString = inputField.innerText
+  const inputFieldValue = parseFloat(inputFieldValueString) ;
   
+  return inputFieldValue;
+
+}
+function setTextElementValueById (elementId, newValue){
+const textElement = document.getElementById(elementId);
+textElement.innerText = newValue;
+}
+
+document.getElementById('btn-deposit').addEventListener('click',function(){
+  const newDepositAmount = getInputFieldValueById('deposit-field');
+  const previousDepositTotal = getInputFieldInnerTextById ('deposit-total');
+  const newDepositTotal = newDepositAmount + previousDepositTotal;
+  setTextElementValueById ('deposit-total', newDepositTotal);
+  const mainBalance = getInputFieldInnerTextById('main-balance');
+  const newTotalMainBalance = mainBalance + newDepositAmount;
+  setTextElementValueById('main-balance', newTotalMainBalance );
+
+
+
 })
 
+ 
 
 
 

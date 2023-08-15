@@ -1,4 +1,13 @@
-console.log('withdraw file')
+document.getElementById('btn-withdraw').addEventListener('click', function(){
+    const newWithdrawAmount = getInputFieldValueById ('withdraw-field');
+const oldWithdrawAmount = getInputFieldInnerTextById('withdraw-total');
+const newWithdrawAmountTotal = newWithdrawAmount + oldWithdrawAmount;
+setTextElementValueById('withdraw-total',newWithdrawAmountTotal);
+
+const mainBalance = getInputFieldInnerTextById('main-balance');
+const newTotalMainBalance = mainBalance - newWithdrawAmount;
+setTextElementValueById('main-balance', newTotalMainBalance );
+})
 
 
 
