@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discount</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="container mx-auto pt-5 space-y-3 text-center">
+      <p class="text-xl font-bold">
+        Please, write the total price of products you decided to buy!
+      </p>
+      <h1>
+        <span class="text-rose-600 text-2xl">Price:</span>
+        <input
+          type="text"
+          name=""
+          id="price"
+          class="bg-red-300 text-black p-1"
+        />
+      </h1>
+      <p>
+        If you want to get
+        <span class="font-bold text-rose-400">30%</span> discount, click below!
+      </p>
+      <button id="btn-apply" class="text-rose-800 bg-[black] p-3">Apply</button>
+      <p>
+        To buy, please <span class="font-bold text-rose-400">pay</span>
+        <span id="pay">0</span>
+      </p>
+    </div>
+
+    <script src="discount2.js"></script>
+  </body>
+</html>
